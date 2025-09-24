@@ -64,16 +64,10 @@ const CleanCareSimple = () => {
 </div>
 
          
-   
-
-
-
-
 
         </div>
       </nav>
 
-      {/* Hero Section */}
       <section style={styles.hero}>
         <div style={styles.heroContent}>
           <h1 style={styles.heroTitle}>

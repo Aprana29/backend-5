@@ -150,37 +150,7 @@ const SignupPage = () => {
     }
   };
 
-  const handleDemoSignup = () => {
-    setFormData({
-      name: 'Demo User',
-      email: 'demo@cleancare.com',
-      phone: '1234567890',
-      password: 'demo123'
-    });
-    setMessage({ type: 'info', text: 'Demo data loaded. Click "Create Account" to register.' });
-  };
-
-  const testServerConnection = async () => {
-    try {
-      setMessage({ type: 'info', text: 'Testing server connection...' });
-      
-      const response = await fetch(`${API_BASE_URL}/api/health`);
-      const data = await response.json();
-      
-      if (data.success) {
-        setMessage({ type: 'success', text: 'Server connection successful! ✅' });
-      } else {
-        setMessage({ type: 'error', text: 'Server responded but with an error' });
-      }
-    } catch (error) {
-      console.error('Connection test error:', error);
-      setMessage({ 
-        type: 'error', 
-        text: 'Cannot connect to server. Make sure backend is running on port 5000.' 
-      });
-    }
-  };
-
+  
   const getMessageClasses = () => {
     const baseStyle = {
       padding: '12px',
@@ -221,15 +191,7 @@ const SignupPage = () => {
   return (
     <div style={styles.container}>
       <div style={styles.card}>
-        {/* Back Button */}
-        <button 
-          style={styles.backBtn} 
-          onClick={() => console.log('Navigate back')}
-          type="button"
-        >
-          <ArrowLeft size={18} />
-          Back to Login
-        </button>
+       
 
         {/* Header */}
         <div style={styles.header}>
@@ -244,13 +206,7 @@ const SignupPage = () => {
         <div style={styles.form}>
           {/* Server Connection Test */}
           <div style={styles.testSection}>
-            <button 
-              type="button" 
-              onClick={testServerConnection}
-              style={styles.testBtn}
-            >
-              🔗 Test Server Connection
-            </button>
+           
           </div>
 
           {/* Message Display */}
@@ -362,49 +318,8 @@ const SignupPage = () => {
           </button>
         </div>
 
-        {/* Footer */}
-        {/* <div style={styles.footer}>
-          <p style={styles.footerText}>
-            Already have an account?{' '}
-            <button 
-              style={styles.loginBtn}
-              onClick={() => console.log('Navigate to login')}
-              type="button"
-            >
-              Sign in here
-            </button>
-          </p>
-        </div> */}
-
-        {/* Demo Info */}
-        {/* <div style={styles.demoInfo}>
-          <p style={styles.demoTitle}>🎯 Demo Account Setup</p>
-          <p style={styles.demoText}>Create a demo account for testing:</p>
-          <button 
-            type="button" 
-            style={styles.demoBtn}
-            onClick={handleDemoSignup}
-          >
-            Fill Demo Data
-          </button>
-          <p style={styles.demoNote}>
-            Use this to create the demo@cleancare.com account for login testing
-          </p> */}
-        {/* </div> */}
-
-        {/* Terms Notice */}
-        {/* <div style={styles.termsNotice}>
-          <p style={styles.termsText}>
-            By creating an account, you agree to our{' '}
-            <button style={styles.termsLink} onClick={() => console.log('Navigate to Terms')}>
-              Terms of Service
-            </button>{' '}
-            and{' '}
-            <button style={styles.termsLink} onClick={() => console.log('Navigate to Privacy')}>
-              Privacy Policy
-            </button>
-          </p>
-        </div> */}
+      
+        
       </div>
     </div>
   );
@@ -450,7 +365,7 @@ const styles = {
   },
 
   header: {
-    background: 'linear-gradient(135deg,#8B5CF6 0%, #a855f7 100%)',
+    background: 'linear-gradient(135deg,#8B5CF6 0%, #8B5CF6 100%)',
     padding: '60px 30px 30px',
     textAlign: 'center',
     color: 'white',
@@ -559,7 +474,7 @@ const styles = {
   submitBtn: {
     width: '100%',
     padding: '14px',
-    background: 'linear-gradient(135deg, #ec4899 0%, #a855f7 100%)',
+    background: 'linear-gradient(135deg, black 0%, #a855f7 100%)',
     border: 'none',
     borderRadius: '10px',
     color: 'white',
